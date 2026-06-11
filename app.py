@@ -124,12 +124,6 @@ with tab_bot:
             st.rerun()
 
     with c_info:
-        st.markdown("### 🔬 Diagnostic Tools")
-        uploaded_file = st.file_uploader("Upload Foto Wajah", type=['jpg', 'png', 'jpeg'])
-        if uploaded_file is not None:
-            st.image(uploaded_file, caption="Menganalisis tekstur...", use_column_width=True)
-            st.success("Foto berhasil diunggah!")
-        st.markdown("---")
         st.markdown("### ⚙️ Sistem Log FSM")
         try:
             st.info(f"📍 **State Aktif:** `{st.session_state.bot.state.name}`")
@@ -200,7 +194,6 @@ with tab_admin:
     total_omset = 0
     valid_pasien_list = []
     
-    # Membaca data menggunakan .get() aman agar tidak memicu KeyError apa pun bentuk datanya
     if 'database_pasien' in st.session_state:
         for p in st.session_state.database_pasien:
             if isinstance(p, dict):
@@ -227,7 +220,7 @@ with tab_admin:
         p_status = pasien.get("status", "Confirmed")
         p_doctor = pasien.get("doctor", "Belum Ditentukan")
         p_sched = pasien.get("schedule", "Hari Ini")
-        p_date = pasien.get("date_created", datetime.now().strftime("%Y-%m-%d")) # <- AMAN DARI KEYERROR
+        p_date = pasien.get("date_created", datetime.now().strftime("%Y-%m-%d"))
         
         t_data = pasien.get("treatment", {})
         t_name = t_data.get("name", "Perawatan Kulit") if isinstance(t_data, dict) else "Perawatan"
