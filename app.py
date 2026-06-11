@@ -123,19 +123,6 @@ with tab_bot:
             st.session_state.chat_history.append({"role": "assistant", "content": st.session_state.bot.get_response()})
             st.rerun()
 
-    with c_info:
-        st.markdown("### 🔬 Diagnostic Tools")
-        uploaded_file = st.file_uploader("Upload Foto Wajah", type=['jpg', 'png', 'jpeg'])
-        if uploaded_file is not None:
-            st.image(uploaded_file, caption="Menganalisis tekstur...", use_column_width=True)
-            st.success("Foto berhasil diunggah!")
-        st.markdown("---")
-        st.markdown("### ⚙️ Sistem Log FSM")
-        try:
-            st.info(f"📍 **State Aktif:** `{st.session_state.bot.state.name}`")
-        except:
-            st.info(f"📍 **State Aktif:** `RUNNING`")
-
 # ------------------------------------------
 # TAB 2: KATALOG Layanan
 # ------------------------------------------
