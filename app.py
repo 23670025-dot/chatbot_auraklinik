@@ -67,7 +67,7 @@ with st.sidebar:
     st.info("👨‍💻 **Sistem Terintegrasi**\n\nMenghubungkan NLP Chatbot dengan Data Panel Resepsionis.")
     st.success("🤖 **Engine Status:**\n\n🟢 FSM & RegEx Online")
     st.markdown("---")
-    st.caption("Final Project Smt 6 © 2024")
+    st.caption("Final Project Smt 6 © 2026")
 
 # ==========================================
 # 4. KONTEN UTAMA
