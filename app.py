@@ -123,6 +123,13 @@ with tab_bot:
             st.session_state.chat_history.append({"role": "assistant", "content": st.session_state.bot.get_response()})
             st.rerun()
 
+        st.markdown("### ⚙️ Sistem Log FSM")
+        try:
+            st.info(f"📍 **State Aktif:** `{st.session_state.bot.state.name}`")
+        except:
+            st.info(f"📍 **State Aktif:** `RUNNING`")
+ini bagian yang dihapus ya??
+
 # ------------------------------------------
 # TAB 2: KATALOG Layanan
 # ------------------------------------------
